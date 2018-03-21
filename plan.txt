@@ -1,0 +1,24 @@
+
+
+level-1 : language
+------------------
+    - JavaScript + TypeScript
+
+leve-2  : Tools
+-------------------
+    - Babel & Webpack
+
+level-3 : Framework
+---------------------
+
+    - AureliaJS        
+
+=================================================
+Lap setup
+
+ 1. Js-runtime   : Node.js
+ 2. Editor       : VS code
+ 3. browser      : chrome  
+
+
+=================================================
