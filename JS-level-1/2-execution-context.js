@@ -71,16 +71,80 @@
 
 // Quiz:
 
-var v=12;
 
-function f1(){
-    function f2(){
-        console.log(v);
-    }
-    f2();
-    var v=13;
-} 
-f1();
+// var v=12;
+// function f1(){
+//     function f2(){
+//         console.log(v);
+//     }
+//     f2(); // f2-context  <--- f1-context
+//     var v=13;
+// }
+// f1();  // f1-context  <---- global-context
 
 
 // ---------------------------------------------------
+
+// var v=12;
+// var v=13;
+
+// ---------------------------------------------------
+
+// var v=100;
+// if(true){
+//     var v=200;
+// }
+// console.log(v);
+
+// ---------------------------------------------------
+
+
+/*
+
+ problems with 'var' keyword
+
+ ==> variable always get 
+ ==> we can re-declare same variable multiple times within context
+ ==> No block-scope to variable(s) within context i.e by default variables can be in global-scope or function-scope
+
+   soln : in ES6 
+
+    --> using 'let' & 'const' keywords with block-scope
+
+ */
+
+ // ---------------------------------------------------
+
+//  console.log(v); // error
+//  let v=12;
+
+// ---------------------------------------------------
+
+// let v=12;
+// let v=13; // error
+
+// ---------------------------------------------------
+
+// let v=100;
+// if(true){
+//     let v=200;
+//     console.log(v);
+// }
+// console.log(v);
+
+// ---------------------------------------------------
+
+// const person={
+//     name:'Nag'
+// };
+// // person=null; // error
+// person.name="Nag N";
+
+// ---------------------------------------------------
+
+// if variable is 'mutable reference ' ==> 'let' keyword
+// if variable is 'immutable reference ' ==> 'const' keyword
+
+// best-practice : avoid 'var' keyword
+// ---------------------------------------------------
+
