@@ -1,0 +1,22 @@
+
+
+
+ ECMAScript 2015  or ES6
+ -------------------------
+
+
+ New syntax
+ ---------------
+
+
+     1. let & const keywords with block-scope
+     2. function with default & rest params
+     3. string interpolation
+     4. obj-literal enhancements
+     5. detructuring
+     6. spread operator
+     7. symbol - data-type
+     8. for-of-loop  ==> to iterate any iterable objects
+     7. OOP through class syntax
+
+
