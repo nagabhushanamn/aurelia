@@ -189,12 +189,196 @@
 // let boss = new Boss('Nag', 34, 1000.00);
 
 
+//----------------------------------------------------
 
 // class Abc{
 //     static staMethod(){
 //         console.log('static method...');
 //     }
 // }
-// Abc.staVar=123;
+// Abc.staVar=123; // static variable
 
 //----------------------------------------------------
+
+
+// function getPrice(){
+//     return 100+200;
+// }
+
+// let getPrice=function(){
+//     return 100+200;
+// }
+
+// Arrow function ( syntax )
+// ------------------------
+
+// let getPrice=()=>{
+//     return 100+200;
+// }
+
+// let getPrice=(count)=>{
+//     return count*(100+200);
+// }
+
+// let getPrice = count => {
+//     return count * (100 + 200);
+// }
+
+// let getPrice = (count,tax) => {
+//     return count * (100 + 200)+tax;
+// }
+
+// let getPrice = (count,tax) => count * (100 + 200)+tax;
+
+
+// let getPrice = (count,tax) =>{ 
+//     let cost=count * (100 + 200);
+//     let total=cost+tax;
+//     return total;
+// };
+
+
+/*
+
+    why/where we need arrow function ?
+
+    => to make compact function-argument(s)
+    => to capture 'this'
+
+*/
+
+//---------------------------------------------
+
+// e.g  => to make compact function-argument(s)
+
+// let nums=[1,3,5,7,9,2,4,6,8,10];
+// // nums.sort(function(a,b){
+// //     return a-b;
+// // });
+
+// // or
+
+// nums.sort((a,b)=>a-b);
+
+
+//---------------------------------------------
+
+// => to capture 'this'
+
+/*
+
+    regular-function vs arrow-function
+    -----------------------------------
+
+    regular-function:
+
+        => by default bound to global-object
+        else
+        => statically or dynamicalyy we can bind to other object(s)
+    
+    arrow-function:
+    
+        => alwya bound to 'creator' ( i.e current context's owner)
+
+*/
+
+
+// let tnr = {
+//     name: 'Nag',
+//     doTeach: function () {
+//         console.log(this.name + " : teaching .js");
+
+//         // let self=this;
+//         // let askQues = function (q) {
+//         //     console.dir(this);
+//         //     console.log(self.name + ' answering ' + q);
+//         // }
+
+//         //or
+//         let askQues = (q) => {
+//             console.dir(this);
+//             console.log(this.name + ' answering ' + q);
+//         }
+//         console.log(this.name + ' : teaching end..');
+//         return askQues;
+//     }
+// };
+
+// let askQues = tnr.doTeach();
+// askQues("Q1");
+
+// let newTnr = { name: 'Praveen' }
+// askQues.call(newTnr, "Q2");
+
+//--------------------------------------------------------------
+
+// Quiz
+
+// let invoice = {
+//     num: 123,
+//     process: function () {
+//         console.log("INV-" + this.num + " processed...");
+//     }
+// };
+
+// let invoice = {
+//     num: 123,
+//     process:  () => {
+//         console.log("INV-" + this.num + " processed...");
+//     }
+// };
+
+
+// let invoice = {
+//     num: 123,
+//     process: function () {
+//         console.log("INV-" + this.num + " processed partially");
+//         let complete=function(){
+//             console.log("INV-" + this.num + " processed completly");
+//         }
+//         return complete;
+//     }
+// };
+
+// let invoice = {
+//     num: 123,
+//     process: function () {
+//         console.log("INV-" + this.num + " processed partially");
+//         let complete=()=>{
+//             console.log("INV-" + this.num + " processed completly");
+//         }
+//         return complete;
+//     }
+// };
+
+// let complete=invoice.process();
+// complete();
+
+//------------------------------------------------------
+
+
+// let person={
+//     name:'Nag',
+//     sayName:function(){
+//         console.log('im '+this.name);
+//         let func=()=>{
+//             console.log('im running by '+this.name);
+//         };
+//         return func;
+//     }
+// };
+
+// let func=person.sayName();
+// func();
+
+//-----------------------------------------------------------
+
+
+// let person={
+//     name:'Nag',
+//     sayName:()=>{
+//         console.log('im '+this.name);
+//     }
+// }
+
+// person.sayName();
