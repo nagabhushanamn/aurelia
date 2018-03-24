@@ -1,0 +1,18 @@
+
+
+---------------------------------------------------
+todo  : {id:Number,title:String,completed:Boolean}
+---------------------------------------------------
+
+----------------------------------------------------
+- addTodo(title)
+- editTodo(id,newTitle)
+- completeTodo(id)
+- deleteTodo(id)
+- completeAll()
+- clearCompleted()
+- viewAll(status)  ==> status = all | active | completed
+----------------------------------------------------
+
+
+ 
