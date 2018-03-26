@@ -1,0 +1,115 @@
+
+
+
+problems with .js-developement , without module standards & Loaders
+
+
+    --> global-naming collisions
+            => using self-executable function pattern
+    --> loading dependency modules order ( dependency modules --> dependent modules..)
+
+  soln:
+
+        ==> using .js-modules standards & loaders
+
+
+  from third-parties 
+
+            a. AMD ( Async Module Definition )   spec
+                   
+                   ==>  loader(s) : Require.js
+
+            b. commonJS          
+            c. UMD   
+
+  from ECMAScript spec  ( from ES6 )
+
+            a. ES modules          
+
+---------------------------------------------------------
+
+
+ a. AMD ( Async Module Definition )   spec
+
+    - define()   ==> to define new js-mdule
+    - require()  ==> to load js modules            
+
+---------------------------------------------------------    
+
+b. commonJS  spec   
+
+        - simpler than AMD-standard
+
+        rules to define & load .js-mdules
+
+        -> by default every .js-file is a module
+        -> by default all var & function in a .js file are private to that module
+        -> to abstract/export any member(s) to other modules , use 'module.exports'
+        -> to require/import any module , use 'require()'
+        -> we can group related modules into package with description file ( package.json )
+
+        imp-note :
+
+        ==> Only Node.js runtime implemented commonJS-spec as default module standard.
+
+--------------------------------------------------------- 
+
+  NPM ( Node Package Manager )
+
+
+     -> command-line tool , runs on Node.js runtime
+
+     use
+
+     -> to publish( if required )
+     -> to install javascript packages from 'NPM repository'
+
+       
+
+--------------------------------------------------------- 
+
+
+How to run commonJS javascript modules in browser-envi?
+
+
+     ==> convert all commonJS-modules to browser use
+
+        How ?
+
+        using tools
+
+                - browserify
+                - webpack   
+
+
+--------------------------------------------------------- 
+
+
+ES modules         
+-----------
+
+-> by default every .js-file is a module
+-> by default all var & function in a .js file are private to that module
+-> to abstract/export any member(s) to other modules , use 'export' keyword
+-> to require/import any module , use 'import' keyword
+-> we can group related modules into package with description file ( package.json )
+
+        
+imp-note : both browser & node.js runtime didnt implement this module standard
+
+
+        How to run ES modules ?
+
+        convert 
+
+        for Node.js  ==> ES-module to commonJS
+        for Browser  ==> 
+        
+                          ES-module to AMD-module  then load AMD modules using Require.js
+                          or
+                          ES-module to commonJS , then bundle-it using browserify or webpack
+
+
+------------------
+
+babel & webpack                          

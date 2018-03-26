@@ -17,10 +17,8 @@
      8. for-of-loop  ==> to iterate any iterable objects
      9. OOP through class syntax
      10. arrow-functions
-
-    
-
      11. collections ( array/list , set , map)
+     
      12. modules
             - AMD using Require.js
             - commonJS module with 'NPM'
