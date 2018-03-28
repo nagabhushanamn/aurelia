@@ -1,6 +1,5 @@
 
 
-
 problems with .js-developement , without module standards & Loaders
 
 
