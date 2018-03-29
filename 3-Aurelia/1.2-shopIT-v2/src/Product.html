@@ -1,0 +1,24 @@
+<template>
+  <require from="review"></require>
+    <div class="row">
+        <div class="col-xs-4 col-sm-3 col-md-3"></div>
+        <div class="col-xs-8 col-sm-9 col-md-9">
+          <h4>${item.name}</h4>
+          <h5>${item.price}</h5>
+          <button click.trigger="buy(product)" class="btn btn-primary">buy</button>
+          <hr/>
+          <ul class="nav nav-tabs">
+            <li class.bind="tab===1?'active':''"><a click.trigger="changeTab(1)">Description</a></li>
+            <li class.bind="tab===2?'active':''"><a click.trigger="changeTab(2)">Specification</a></li>
+            <li class.bind="tab===3?'active':''"><a click.trigger="changeTab(3)">Reviews</a></li>
+          </ul>
+          <div if.bind="tab===1" class="panel"><p>${item.description}</p></div>
+          <div if.bind="tab===2" class="panel"><p>Not Yet</p></div>
+          <div if.bind="tab===3" class="panel">
+            <div repeat.for="review of reviews">
+                <review review.bind="review"></review>
+            </div>
+          </div>
+        </div>
+      </div>
+</template>

@@ -1,6 +1,0 @@
-
-
-data-binding
-
-
-    - string interpolation ==> ${expression}

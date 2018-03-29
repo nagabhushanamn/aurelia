@@ -1,0 +1,29 @@
+<template>
+  <div class="container">
+    <div class="page-header">shop-app</div>
+    <span class="badge">${cart.length} </span> in cart | <a href>View Cart</a>
+    <hr/>
+    <div class="list-group">
+      <div class="list-group-item" repeat.for="product of products">
+        <div class="row">
+          <div class="col-xs-4 col-sm-3 col-md-3"></div>
+          <div class="col-xs-8 col-sm-9 col-md-9">
+            <h4>${product.name}</h4>
+            <h5>${product.price}</h5>
+            <button click.trigger="buy(product)" class="btn btn-primary">buy</button>
+            <hr/>
+            <ul class="nav nav-tabs">
+              <li class.bind="tab===1?'active':''"><a click.trigger="changeTab(1)">Description</a></li>
+              <li class.bind="tab===2?'active':''"><a click.trigger="changeTab(2)">Specification</a></li>
+              <li class.bind="tab===3?'active':''"><a click.trigger="changeTab(3)">Reviews</a></li>
+            </ul>
+            <div if.bind="tab===1" class="panel"><p>${product.description}</p></div>
+            <div if.bind="tab===2" class="panel"><p>Not Yet</p></div>
+            <div if.bind="tab===3" class="panel"><p>None Yet</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</template>
