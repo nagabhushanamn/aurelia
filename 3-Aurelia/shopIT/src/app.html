@@ -1,0 +1,28 @@
+<template>
+  <div class="container">
+    <div class="page-header">${title}</div>
+    <div class="list-group">
+      <div repeat.for="product of products" class="list-group-item">
+        <div class="row">
+          <div class="col-xs-3 col-sm-3 col-md-3">
+            <img class="img-responsive" src.bind="product.image"/>
+          </div>
+          <div class="col-xs-9 col-sm-9 col-md-9">
+            <h3>${product.name}</h3>
+            <h4>&#8377;${product.price}</h4>
+            <button if.bind="product.canBuy" class="btn btn-primary">Buy</button>
+            <hr/>
+            <ul class="nav nav-tabs">
+              <li class.bind="tab===1?'active':''"><a click.trigger="changeTab(1)">Description</a></li>
+              <li class.bind="tab===2?'active':''"><a click.trigger="changeTab(2)">Specification</a></li>
+              <li class.bind="tab===3?'active':''"><a click.trigger="changeTab(3)">Reviews</a></li>
+            </ul>
+            <div if.bind="tab===1" class="panel"> <p>${product.description}</p></div>
+            <div if.bind="tab===2" class="panel"> <p>Not Yet</p></div>
+            <div if.bind="tab===3" class="panel"> <p>None Yet</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

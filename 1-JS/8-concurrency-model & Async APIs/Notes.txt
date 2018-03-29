@@ -1,0 +1,30 @@
+
+.js-lang
+
+    -> all IO operations are non-blocking
+    -> single-threaded lang , but we can execute concurrent actions
+
+   -------------------------------------------------------------
+
+   browser e.g chrome
+
+    1 - javascript-engine ( v8 )    : ECMAScript spec
+            - single-call-stack   ==> to execute javascript-contexts/scopes
+            - heap                ==> to hold objects
+    2 - browser Web APIs ( e.g DOM, XHR , Timer , HTML5 APIs)   : w3c reccommendations       
+    3 - Event/Callback/Message-Queue
+    4 - EventLoop
+
+    -------------------------------------------------------------
+
+    on event , 
+    
+    => evenry event-handler(callback) always executes async
+
+    --------------------------------------------------------------
+
+    alse , we can executs our functions async , using Async APIs
+
+     - Promise API ( ES6 )
+     +
+     - RxJS ( Reactive eXtensions for JavaScript)
