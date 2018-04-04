@@ -1,0 +1,15 @@
+
+
+CM
+--------------------------------------------------------
+
+List of contacts         |    Contact-details
+
+--------------------------------------------------------
+
+- Routing
+- Dependency Injection
+- Pub & Sub
+- elements as globa resources
+
+----------------------------------------------------
