@@ -1,0 +1,36 @@
+<template>
+    <div class="row">
+        <div class="col-md-12 col-sm-12">
+                <div class="card">
+                <div class="card-header">Product List</div>
+                <div class="card-body">
+                    <div if.bind="products.length===0" class="alert alert-primary" role="alert">
+                        No Products
+                    </div>
+                    <table if.bind="products.length>0" class="table table-sm table-bordered table-stripedF">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Name</th>
+                                <th>Price</th>
+                                <th>Make-date</th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr repeat.for="product of products">
+                                <td>${product.id}</td>
+                                <td>${product.name}</td>
+                                <td>&#8377;${product.price}</td>
+                                <td>${product.make_date}</td>
+                                <td><a route-href="route:edit;params.bind:{id:product.id}"><i class="fa fa-edit"></i></a></td>
+                                <td><a href click.trigger="delete(product.id)"><i class="fa fa-trash"></i></a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
